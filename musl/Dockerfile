@@ -7,7 +7,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.11/main" > /etc/apk/repositori
     && apk update \
     && apk upgrade --available ; exit 0
 RUN apk fix 
-RUN apk add --no-cache g++ gfortran make cmake patchelf git ccache python3 py3-pip python3-dev \
+RUN apk add --no-cache g++ gfortran make cmake patchelf git ccache python3 py3-pip python3-dev libexecinfo-dev  libexecinfo\
     && apk add --no-cache --force-overwrite linux-headers freetype-dev libjpeg-turbo-dev zlib-dev openblas-dev lapack-dev  openssl-dev libuv-dev graphviz \
     && git clone https://github.com/PaddlePaddle/Paddle.git \
     && cd ./Paddle \
