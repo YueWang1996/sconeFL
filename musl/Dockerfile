@@ -21,16 +21,16 @@ RUN apk add --no-cache g++ gfortran make cmake patchelf git ccache python3 py3-p
     && make -j$(nproc)
     
 #############stop here
-RUN cd /Paddle/build/python/dist \
-    && pip3 install -U paddlepaddle-0.0.0-cp38-cp38-linux_x86_64.whl
+# RUN cd /Paddle/build/python/dist \
+#     && pip3 install -U paddlepaddle-0.0.0-cp38-cp38-linux_x86_64.whl
 
 # install opencv
-RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip \
-    && unzip opencv.zip \
-    && mkdir opencv_build && cd opencv_build \
-    && cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_NEW_PYTHON_SUPPORT=ON -D BUILD_EXAMPLES=ON ../opencv-master \
-    && make -j$(nproc) && make install \
-    && cd /usr/local/lib/python3.8/site-packages/cv2/python-3.8  \
-    && mv cv2.cpython-38-x86_64-linux-gnu.so cv2.so 
+# RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip \
+#     && unzip opencv.zip \
+#     && mkdir opencv_build && cd opencv_build \
+#     && cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_NEW_PYTHON_SUPPORT=ON -D BUILD_EXAMPLES=ON ../opencv-master \
+#     && make -j$(nproc) && make install \
+#     && cd /usr/local/lib/python3.8/site-packages/cv2/python-3.8  \
+#     && mv cv2.cpython-38-x86_64-linux-gnu.so cv2.so 
      
 ENTRYPOINT [ "/bin/sh" ]
