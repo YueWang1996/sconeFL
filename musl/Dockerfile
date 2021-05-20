@@ -18,7 +18,9 @@ RUN apk add --no-cache g++ gfortran make cmake patchelf git ccache python3 py3-p
     && pip3 install wheel numpy protobuf \
     && cmake ..  -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/g++ -DWITH_AVX=OFF -DWITH_MUSL=ON -DWITH_CRYPTO=OFF -DWITH_MKL=OFF -DWITH_GPU=OFF -DPY_VERSION=3.8 -DPYTHON_INCLUDE_DIR=/usr/include/python3.8 -DPYTHON_LIBRARY=/usr/lib/libpython3.so -DPY_PIP=/usr/lib/python3.8/site-packages/pip -DPY_NUMPY=/usr/lib/python3.8/site-packages/numpy -DPY_WHEEL=/usr/lib/python3.8/site-packages/wheel -DPY_GOOGLE.PROTOBUF=/usr/lib/python3.8/site-packages/google/protobuf -DPYTHON_NUMPY_INCLUDE_DIR=/usr/lib/python3.8/site-packages/numpy/core/include/numpy \
     && export SCONE_HEAP=4G  \
-    && make -j$(nproc) 
+    && make -j$(nproc)
+    
+#############stop here
 RUN cd /Paddle/build/python/dist \
     && pip3 install -U paddlepaddle-0.0.0-cp38-cp38-linux_x86_64.whl
 
