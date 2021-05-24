@@ -9,9 +9,9 @@ RUN apt-get update \
     && cd / \
     && wget -q https://cmake.org/files/v3.16/cmake-3.16.0-Linux-x86_64.tar.gz \
     && tar -zxvf cmake-3.16.0-Linux-x86_64.tar.gz \
-    && rm cmake-3.16.0-Linux-x86_64.tar.gz \
-    && PATH=/cmake-3.16.0-Linux-x86_64/bin:$PATH 
-RUN git clone https://github.com/PaddlePaddle/PaddleFL \
+    && rm cmake-3.16.0-Linux-x86_64.tar.gz 
+RUN PATH=/cmake-3.16.0-Linux-x86_64/bin:$PATH \
+    && git clone https://github.com/PaddlePaddle/PaddleFL \
     && cd PaddleFL/ \
     && mkdir build && cd build \
     && cmake ../ -DPYTHON_EXECUTABLE=/root/miniconda/bin/python3 -DPYTHON_INCLUDE_DIRS=/root/miniconda/include/python3.7m -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
