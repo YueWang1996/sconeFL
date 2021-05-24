@@ -1,7 +1,7 @@
 From registry.scontain.com:5050/lequocdo/scone-paddle:paddle-fl-1.8.0
 WORKDIR /
 RUN apt-get update \
-    && apt-get install build-essential \
+    && apt-get install build-essential libmkldnn-dev libmkldnn1\
     && wget --no-check-certificate https://paddlefl.bj.bcebos.com/redis-stable.tar \
     && tar -xf redis-stable.tar \
     && cd redis-stable &&  make \
