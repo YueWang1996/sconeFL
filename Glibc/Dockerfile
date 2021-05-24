@@ -1,7 +1,7 @@
 From registry.scontain.com:5050/lequocdo/scone-paddle:paddle-fl-1.8.0
 WORKDIR /
 RUN apt-get update \
-    && apt-get install build-essential libmkldnn-dev libmkldnn1\
+    && apt-get install -y build-essential libmkldnn-dev libmkldnn1\
     && wget --no-check-certificate https://paddlefl.bj.bcebos.com/redis-stable.tar \
     && tar -xf redis-stable.tar \
     && cd redis-stable &&  make \
@@ -17,5 +17,5 @@ RUN git clone https://github.com/PaddlePaddle/PaddleFL \
     && cmake ../ -DPYTHON_EXECUTABLE=/root/miniconda/bin/python3 -DPYTHON_INCLUDE_DIRS=/root/miniconda/include/python3.7m -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
     && make -j$(nproc)
 
-    
+ENTRYPOINT [ "/bin/sh" ]  
     
