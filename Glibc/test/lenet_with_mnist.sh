@@ -9,5 +9,5 @@ cp ../logistic_with_mnist/process_data.py . && cp ../logistic_with_mnist/decrypt
 vim process_data.py
 
 # too long time
-bash run_standalone.sh train_lenet.py
+bash ../run_standalone.sh train_lenet.py
 python3 decrypt_save.py decrypt_file
