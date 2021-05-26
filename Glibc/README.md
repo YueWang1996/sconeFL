@@ -1,6 +1,6 @@
 # Dockerfile
 
-Install PaddleFL from source code --> failure now
+Install PaddleFL from source code on scone Glibc image --> failure now
 
 ref: https://github.com/PaddlePaddle/PaddleFL/blob/master/docs/source/md/compile_and_install.md
 
@@ -12,7 +12,7 @@ $ docker build -t scone-fl .
 
 # pip.sh
 
-Install PaddleFL from pip --> failure now
+Install PaddleFL from pip on scone Glibc image--> failure now
 
 ref: https://github.com/PaddlePaddle/PaddleFL/blob/master/docs/source/md/compile_and_install.md
 
@@ -41,3 +41,25 @@ Traceback (most recent call last):
     fluid.load_op_library(_paddle_enc_lib)
 AttributeError: module 'paddle.fluid' has no attribute 'load_op_library'
 ```
+
+# native.sh
+
+Install PaddleFL from docker using pip on official PaddleFL image
+
+ref: https://github.com/PaddlePaddle/PaddleFL/blob/master/docs/source/md/compile_and_install.md
+
+```bash
+$ docker pull hub.baidubce.com/paddlefl/paddle_fl:latest
+$ docker run --name fl-native --net=host -it -v $PWD:/paddle paddlepaddle/paddlefl:latest /bin/bash
+$ git clone https://github.com/YueWang1996/sconeFL.git && cd sconeFL/Glibc
+$ bash native.sh
+```
+
+# test
+
+Some PaddleFL examples:
+
+https://github.com/PaddlePaddle/PaddleFL/blob/master/python/paddle_fl/mpc/examples/linear_reg_with_uci/README.md
+
+https://github.com/PaddlePaddle/PaddleFL/tree/master/python/paddle_fl/mpc/examples/model_encryption/train
+
