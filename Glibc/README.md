@@ -44,15 +44,16 @@ AttributeError: module 'paddle.fluid' has no attribute 'load_op_library'
 
 # native.sh
 
-Install PaddleFL from docker using pip on official PaddleFL image
+Install PaddleFL from pip on official PaddleFL image
 
 ref: https://github.com/PaddlePaddle/PaddleFL/blob/master/docs/source/md/compile_and_install.md
 
 ```bash
 $ docker pull hub.baidubce.com/paddlefl/paddle_fl:latest
 $ docker run --name fl-native --net=host -it -v $PWD:/paddle paddlepaddle/paddlefl:latest /bin/bash
-$ git clone https://github.com/YueWang1996/sconeFL.git && cd sconeFL/Glibc
-$ bash native.sh
+# git clone https://github.com/PaddlePaddle/PaddleFL  
+# git clone https://github.com/YueWang1996/sconeFL.git && cd sconeFL/Glibc
+# bash native.sh
 ```
 
 # test
