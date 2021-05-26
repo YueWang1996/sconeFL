@@ -2,6 +2,8 @@
 
 Install PaddleFL from source code --> failure now
 
+ref: https://github.com/PaddlePaddle/PaddleFL/blob/master/docs/source/md/compile_and_install.md
+
 ```bash
 $ docker login registry.scontain.com:5050
 $ git clone https://github.com/YueWang1996/sconeFL.git && cd sconeFL/Glibc
@@ -11,6 +13,8 @@ $ docker build -t scone-fl .
 # pip.sh
 
 Install PaddleFL from pip --> failure now
+
+ref: https://github.com/PaddlePaddle/PaddleFL/blob/master/docs/source/md/compile_and_install.md
 
 ```bash
 $ docker login registry.scontain.com:5050
