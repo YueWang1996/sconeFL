@@ -19,7 +19,7 @@ $ git clone https://github.com/YueWang1996/sconeFL.git && cd sconeFL/Glibc
 $ bash pip.sh
 ```
 
-## error message:
+## error message of pip.sh:
 
 ```bash
 root@a3f4f2706588:/# python3
