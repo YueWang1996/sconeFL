@@ -4,5 +4,4 @@ export PATH_TO_REDIS_BIN=/usr/local/bin/ && export REDIS_PORT=6379 && export LOC
 
 cd /PaddleFL/python/paddle_fl/mpc/examples/linear_reg_with_uci
 python3 prepare.py
-cp /PaddleFL/python/paddle_fl/mpc/examples/run_standalone.sh .
-bash run_standalone.sh uci_demo.py
+bash ../run_standalone.sh uci_demo.py
