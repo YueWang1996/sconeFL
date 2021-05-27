@@ -23,6 +23,17 @@ $ git clone https://github.com/YueWang1996/sconeFL.git && cd sconeFL/Glibc
 $ bash pip.sh
 ```
 
+OR just run this in the container
+
+```bash
+apt-get update \
+    && apt-get install -y libgomp1 patchelf \
+    && pip3 install paddle_fl \
+    && pip3 uninstall paddlepaddle \
+    && pip3 uninstall paddlepaddle-gpu \
+    && pip3 install paddlepaddle==1.8.0
+```
+
 ## error message of pip.sh:
 
 See: https://github.com/PaddlePaddle/PaddleFL/issues/166
