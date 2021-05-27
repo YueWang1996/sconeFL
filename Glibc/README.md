@@ -23,6 +23,14 @@ collect2: error: ld returned 1 exit status
 make[2]: *** [core/privc3/CMakeFiles/boolean_tensor_test.dir/build.make:95: core/privc3/boolean_tensor_test] Error 1
 make[1]: *** [CMakeFiles/Makefile2:875: core/privc3/CMakeFiles/boolean_tensor_test.dir/all] Error 2
 ......
+paddle_tensor.cc:(.text._ZNK6common12PaddleTensorIhE11bitwise_xorEPKNS_13TensorAdapterIhEEPS3_[_ZNK6common12PaddleTensorIhE11bitwise_xorEPKNS_13TensorAdapterIhEEPS3_]+0x265): undefined reference to `paddle::platform::ErrorSummary::ToString[abi:cxx11]() const'
+/usr/bin/ld: ../common/libmpc_tensor.a(paddle_tensor.cc.o): in function `common::PaddleTensor<unsigned char>::sub128(common::TensorAdapter<unsigned char> const*, common::TensorAdapter<unsigned char>*, bool, bool) const':
+paddle_tensor.cc:(.text._ZNK6common12PaddleTensorIhE6sub128EPKNS_13TensorAdapterIhEEPS3_bb[_ZNK6common12PaddleTensorIhE6sub128EPKNS_13TensorAdapterIhEEPS3_bb]+0x472): undefined reference to `paddle::platform::ErrorSummary::ToString[abi:cxx11]() const'
+/usr/bin/ld: ../common/libmpc_tensor.a(paddle_tensor.cc.o):paddle_tensor.cc:(.text._ZNK6common12PaddleTensorIhE11bitwise_andEPKNS_13TensorAdapterIhEEPS3_[_ZNK6common12PaddleTensorIhE11bitwise_andEPKNS_13TensorAdapterIhEEPS3_]+0x265): more undefined references to `paddle::platform::ErrorSummary::ToString[abi:cxx11]() const' follow
+collect2: error: ld returned 1 exit status
+make[2]: *** [core/privc3/CMakeFiles/fixedpoint_tensor_test.dir/build.make:95: core/privc3/fixedpoint_tensor_test] Error 1
+make[1]: *** [CMakeFiles/Makefile2:943: core/privc3/CMakeFiles/fixedpoint_tensor_test.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
 ```
 
 PaddleFL developer suggests gcc-4.8.5: https://github.com/PaddlePaddle/PaddleFL/issues/166#issuecomment-847575834
