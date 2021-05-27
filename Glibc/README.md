@@ -10,7 +10,7 @@ $ git clone https://github.com/YueWang1996/sconeFL.git && cd sconeFL/Glibc
 $ docker build -t scone-fl .
 ```
 
-## error message of Dockerfile:
+### error message of Dockerfile:
 
 Multiple undefined reference errors
 
@@ -60,7 +60,7 @@ apt-get update \
     && pip3 install paddlepaddle==1.8.0
 ```
 
-## error message of pip.sh:
+### error message of pip.sh:
 
 See: https://github.com/PaddlePaddle/PaddleFL/issues/166
 
