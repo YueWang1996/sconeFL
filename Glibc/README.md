@@ -36,7 +36,7 @@ make: *** [Makefile:141: all] Error 2
 PaddleFL developer suggests gcc-4.8.5: https://github.com/PaddlePaddle/PaddleFL/issues/166#issuecomment-847575834
 
 
-# pip.sh
+## setup.sh
 
 Install PaddleFL from pip on scone Glibc image--> failure now
 
@@ -44,23 +44,17 @@ ref: https://github.com/PaddlePaddle/PaddleFL/blob/master/docs/source/md/compile
 
 ```bash
 $ docker login registry.scontain.com:5050
-$ docker run -it --name scone-fl-pip -v $PWD:/demo --privileged --device /dev/isgx registry.scontain.com:5050/lequocdo/scone-paddle:paddle-fl-1.8.0
+$ docker run -it --name scone-fl -v $PWD:/demo --privileged --device registry.scontain.com:5050/lequocdo/scone-paddle:paddle-fl-1.0.1-paddlepaddle1.8.0
 $ git clone https://github.com/YueWang1996/sconeFL.git && cd sconeFL/Glibc
-$ bash pip.sh
+$ bash setup.sh
 ```
 
-OR just run this in the container
+run python file in the container
 
 ```bash
-apt-get update \
-    && apt-get install -y libgomp1 patchelf \
-    && pip3 install paddle_fl \
-    && pip3 uninstall paddlepaddle \
-    && pip3 uninstall paddlepaddle-gpu \
-    && pip3 install paddlepaddle==1.8.0
+# SCONE_FORK=1 SCONE_LOG=3 SCONE_HEAP=4G python xxx.py
 ```
-
-### error message of pip.sh:
+help links:
 
 See: https://github.com/PaddlePaddle/PaddleFL/issues/166
 
