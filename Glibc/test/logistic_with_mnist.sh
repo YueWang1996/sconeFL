@@ -4,5 +4,5 @@
 
 cd /PaddleFL/python/paddle_fl/mpc/examples/logistic_with_mnist \
 && python3 process_data.py \
-&& bash ../run_standalone.sh train_fc_sigmoid.py \
-&& python3 decrypt_save.py decrypt_file
+&& bash ../run_standalone.sh train_fc_sigmoid.py 
+# && python3 decrypt_save.py decrypt_file
