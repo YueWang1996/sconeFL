@@ -4,7 +4,7 @@ Set up PaddleFL on scone Glibc image
 
 ```bash
 $ docker login registry.scontain.com:5050
-$ docker run -it --name scone-fl -v $PWD:/logs --privileged --device /dev/isgx registry.scontain.com:5050/lequocdo/scone-paddle:paddle-fl-1.0.1-paddlepaddle1.8.0
+$ docker run -it --name scone-fl -v $PWD:/logs --privileged --device /dev/isgx registry.scontain.com:5050/lequocdo/scone-paddle:paddle-fl-1.1.0-paddlepaddle1.8.0
 $ git clone https://github.com/YueWang1996/sconeFL.git && cd sconeFL/Glibc
 $ bash setup.sh
 ```
