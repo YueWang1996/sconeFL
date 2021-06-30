@@ -1,3 +1,6 @@
+# commands for https://github.com/PaddlePaddle/PaddleFL/tree/master/python/paddle_fl/mpc/examples/mean_normalize_demo
+
+
 mkdir data
 cd /PaddleFL/python/paddle_fl/mpc/examples/mean_normalize_demo
 python3 prepare.py
