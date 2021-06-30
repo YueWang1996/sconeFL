@@ -1,8 +1,7 @@
 # commands for https://github.com/PaddlePaddle/PaddleFL/tree/master/python/paddle_fl/mpc/examples/mean_normalize_demo
 
-
-mkdir data
 cd /PaddleFL/python/paddle_fl/mpc/examples/mean_normalize_demo
+mkdir data
 python3 prepare.py
 bash ../run_standalone.sh mean_normalize_demo.py
 python3 verify.py
