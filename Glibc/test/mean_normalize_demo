@@ -2,6 +2,6 @@ cd /PaddleFL/python/paddle_fl/mpc/examples/mean_normalize_demo
 python3 prepare.py
 bash ../run_standalone.sh mean_normalize_demo.py
 python3 verify.py
-#python3 decrypt_and_rescale.py 0
-#python3 decrypt_and_rescale.py 1
-#python3 decrypt_and_rescale.py 2
+# python3 decrypt_and_rescale.py 0
+# python3 decrypt_and_rescale.py 1
+# python3 decrypt_and_rescale.py 2
