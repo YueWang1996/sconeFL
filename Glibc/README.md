@@ -12,7 +12,7 @@ $ bash setup.sh
 run python file in the container
 
 ```bash
-# SCONE_FORK=1 SCONE_LOG=3 SCONE_HEAP=4G python xxx.py
+# SCONE_FORK=1 SCONE_LOG=7 SCONE_HEAP=3G python xxx.py
 ```
 help links:
 
